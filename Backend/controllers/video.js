@@ -133,7 +133,7 @@ export const getVideosByTags = async (req, res, next) => {
   }
 };
 
-// Get videos by search
+// Get videos by search query
 export const getVideosBySearch = async (req, res, next) => {
   try {
     const query = req.query.q
