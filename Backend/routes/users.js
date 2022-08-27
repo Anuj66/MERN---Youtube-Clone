@@ -22,10 +22,10 @@ router.delete('/:id', verifyToken, deleteUser)
 router.get('/find/:id', getUser)
 
 // Subscribe a user
-router.put('/sub/:id', subscribeUser)
+router.put('/sub/:id', verifyToken, subscribeUser)
 
 // Unsubscribe a user
-router.put('/unsub/:id', unsubscribeUser)
+router.put('/unsub/:id', verifyToken, unsubscribeUser)
 
 // Like a video
 router.put('/like/:videoId', likeVideo)

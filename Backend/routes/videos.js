@@ -6,7 +6,7 @@ import {
     deleteVideo,
     getRandomVideos, getSubsVideos,
     getTrendingVideos,
-    getVideo,
+    getVideo, getVideosBySearch, getVideosByTags,
     updateVideo
 } from "../controllers/video.js";
 
@@ -19,6 +19,8 @@ router.get('/find/:id', getVideo)
 router.put('/view/:id', addView)
 router.get('/trend', getTrendingVideos)
 router.get('/random', getRandomVideos)
-router.get('/sub', getSubsVideos)
+router.get('/sub', verifyToken, getSubsVideos)
+router.get('/tags', getVideosByTags)
+router.get('/search', getVideosBySearch)
 
 export default router;
